@@ -4,7 +4,7 @@ public class Bear {
     private String name;
     private ArrayList<Salmon> belly;
 
-    public Bear(String name){
+    public Bear(String name) {
         this.belly = new ArrayList<Salmon>();
         this.name = name;
     }
@@ -13,7 +13,20 @@ public class Bear {
         return belly.size();
     }
 
-    public void eat(Salmon salmon) {
+    public void eatFishFromRiver(River river) {
+        Salmon salmon = river.removeFish();
         belly.add(salmon);
+    }
+
+    public void sleep() {
+        belly.clear();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public ArrayList<Salmon> getBelly() {
+        return belly;
     }
 }
